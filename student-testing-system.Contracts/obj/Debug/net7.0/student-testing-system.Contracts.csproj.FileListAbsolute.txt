@@ -1,0 +1,11 @@
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/bin/Debug/net7.0/student-testing-system.Contracts.deps.json
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/bin/Debug/net7.0/student-testing-system.Contracts.dll
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/bin/Debug/net7.0/student-testing-system.Contracts.pdb
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.AssemblyInfoInputs.cache
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.AssemblyInfo.cs
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.csproj.CoreCompileInputs.cache
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.dll
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/refint/student-testing-system.Contracts.dll
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.pdb
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/ref/student-testing-system.Contracts.dll
