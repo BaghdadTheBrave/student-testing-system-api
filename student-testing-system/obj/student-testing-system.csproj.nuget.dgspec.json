@@ -4,14 +4,14 @@
     "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj": {}
   },
   "projects": {
-    "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj": {
+    "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/student-testing-system.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj",
-        "projectName": "student-testing-system",
-        "projectPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj",
+        "projectUniqueName": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/student-testing-system.Contracts.csproj",
+        "projectName": "student-testing-system.Contracts",
+        "projectPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/student-testing-system.Contracts.csproj",
         "packagesPath": "/Users/volodymyr/.nuget/packages/",
-        "outputPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/obj/",
+        "outputPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/volodymyr/.nuget/NuGet/NuGet.Config"
@@ -40,7 +40,74 @@
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[7.0.14, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj",
+        "projectName": "student-testing-system",
+        "projectPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/student-testing-system.csproj",
+        "packagesPath": "/Users/volodymyr/.nuget/packages/",
+        "outputPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/volodymyr/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/student-testing-system.Contracts.csproj": {
+                "projectPath": "/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/student-testing-system.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.14, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

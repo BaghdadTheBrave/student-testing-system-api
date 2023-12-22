@@ -9,3 +9,4 @@
 /Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/refint/student-testing-system.Contracts.dll
 /Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.pdb
 /Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/ref/student-testing-system.Contracts.dll
+/Users/volodymyr/Documents/dotNET-3/app/student-testing-system/student-testing-system.Contracts/obj/Debug/net7.0/student-testing-system.Contracts.csproj.AssemblyReference.cache
