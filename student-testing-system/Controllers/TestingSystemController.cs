@@ -11,13 +11,18 @@ public class TestingSystemController:ControllerBase
     //Question
     
     
-    [HttpPost("/questions")]
-    public IActionResult PostQuestion( PostQuestionRequest request)
+    [HttpPost("/questions/add")]
+    public IActionResult PostNewQuestion( PostQuestionRequest request)
     {
         return Ok(request);
     }
     [HttpGet("/questions")]
     public IActionResult GetQuestion( GetQuestionRequest request)
+    {
+        return Ok(request);
+    }
+    [HttpPost("/questions")]
+    public IActionResult PostQuestionAnswer( AnswerQuestionRequest request)
     {
         return Ok(request);
     }

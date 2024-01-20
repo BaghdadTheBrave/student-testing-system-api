@@ -4,7 +4,7 @@ public record GetQuestionResponse(
     Guid QuestionId,
     Guid ThemeId,
     string Question,
-    string Qnswer1,
-    string Qnswer2,
-    string Qnswer3
+    string Answer1,
+    string Answer2,
+    string Answer3
 );
