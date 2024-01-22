@@ -49,7 +49,7 @@ public class TestingSystemController:ControllerBase
     [HttpGet("/questions")]
     public IActionResult GetQuestion()
     {
-        //TODO: get theme id
+        //TODO: get theme id from txt
         using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
         
         var question = context.Questions.OrderBy(q => EF.Functions.Random()).FirstOrDefault(); 
@@ -64,7 +64,7 @@ public class TestingSystemController:ControllerBase
             "",
             ""
         );
-        return Ok();
+        return Ok(response);
     }
     
     [HttpPost("/questions")]
@@ -81,12 +81,12 @@ public class TestingSystemController:ControllerBase
             StudentId = -1,
             AttemptId = -1
         };
-        context.Answers.Add(record);
-        context.SaveChanges();
+        //context.Answers.Add(record);
+        //context.SaveChanges();
         
         var response = new AnswerQuestionResponse(record.QuestionId ?? -1 ,request.Answer);
         
-        return Ok(request);
+        return Ok(response);
     }
     
     
@@ -96,7 +96,17 @@ public class TestingSystemController:ControllerBase
     [HttpPost("/subjects")]
     public IActionResult PostSubject( PostSubjectRequest request)
     {
-        return Ok(request);
+        var context = new StudentTestingSystemDbContext();
+        var record = new ModelsDb.Subject()
+        {
+            Title = request.SubjectName,
+            Id = Guid.NewGuid().GetHashCode()
+        };
+        context.Subjects.Add(record);
+        context.SaveChanges();
+        var response = new PostSubjectResponse(record.Id,record.Title);
+        
+        return Ok(response);
     }
     [HttpGet("/subjects")]
     public IActionResult GetSubjects()
