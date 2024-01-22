@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using student_testing_system.Contracts.Question;
 using student_testing_system.Contracts.Subject;
 using student_testing_system.Contracts.Theme;
-using student_testing_system.DbData;
-using student_testing_system.DbModels;
 
 namespace student_testing_system.Controllers;
 
@@ -49,11 +47,7 @@ public class TestingSystemController:ControllerBase
     [HttpGet("/subjects")]
     public IActionResult GetSubjects( GetSubjectsResponse request)
     {
-        using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
-        var subjects = context.Subjects.ToList();
-        var titles = subjects.Select(s => s.Title).ToList();
-        var ids = subjects.Select(s => s.Id ).ToList();
-        return Ok(new GetSubjectsResponse(titles,ids));
+        return Ok(request);
     }
     
     

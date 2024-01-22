@@ -2,7 +2,7 @@ namespace student_testing_system.Contracts.Theme;
 
 public record PostThemeResponse
 (
-    Guid ThemeId,
+    int ThemeId,
     string ThemeName,
-    Guid SubjectId
+    int SubjectId
 );
