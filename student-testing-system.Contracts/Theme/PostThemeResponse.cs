@@ -4,5 +4,7 @@ public record PostThemeResponse
 (
     int ThemeId,
     string ThemeName,
-    int SubjectId
+    int SubjectId,
+    int questionsAmount,
+    int attemptsAmount
 );

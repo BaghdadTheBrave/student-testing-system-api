@@ -124,7 +124,22 @@ public class TestingSystemController:ControllerBase
     [HttpPost("/themes")]
     public IActionResult PostTheme( PostThemeRequest request)
     {
-        return Ok(request);
+        var context = new StudentTestingSystemDbContext();
+        var record = new ModelsDb.Theme()
+        {
+            Title = request.ThemeName,
+            Id = Guid.NewGuid().GetHashCode(),
+            SubjectId = request.SubjectId,
+            AmountOfQuestionsPerAttempt = request.questionsAmount,
+            NumberOfAttempts = request.attemptsAmount
+        };
+        
+        context.Themes.Add(record);
+        context.SaveChanges();
+        
+        var response = new PostThemeResponse(record.Id,record.Title,record.SubjectId ?? -1,record.AmountOfQuestionsPerAttempt ?? -1,record.NumberOfAttempts ?? -1);
+        
+        return Ok(response);
     }
     [HttpGet("/themes/{id:int}")]
     public IActionResult GetThemes(int id)
