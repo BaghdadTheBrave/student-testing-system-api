@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using student_testing_system.Contracts.Question;
 using student_testing_system.Contracts.Subject;
 using student_testing_system.Contracts.Theme;
+using student_testing_system.DataDb;
+using student_testing_system.ModelsDb;
+using student_testing_system.Models;
 
 namespace student_testing_system.Controllers;
 
@@ -10,28 +14,78 @@ namespace student_testing_system.Controllers;
 [ApiController]
 public class TestingSystemController:ControllerBase
 {
-    public static Guid ToGuid(int value)
-    {
-        byte[] bytes = new byte[16];
-        BitConverter.GetBytes(value).CopyTo(bytes, 0);
-        return new Guid(bytes);
-    }
-    //Question
-    
-    
     [HttpPost("/questions/add")]
     public IActionResult PostNewQuestion( PostQuestionRequest request)
     {
-        return Ok(request);
+        using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
+        var record = new ModelsDb.Question()
+        {
+            TextOfQuestion = request.Question,
+            ThemeId = request.ThemeId,
+            Id = Guid.NewGuid().GetHashCode()
+        };
+        context.Questions.Add(record);
+        var subject = 
+            (
+                from theme in context.Themes
+                where theme.Id == request.ThemeId
+                select theme.SubjectId
+            ).FirstOrDefault();
+        var response = new PostQuestionResponse
+            (
+                record.Id,
+                request.ThemeId,
+                subject ?? -1,
+                record.TextOfQuestion,
+                request.Answer1,
+                request.Answer2,
+                request.Answer3
+            );
+        context.SaveChanges();
+        //TODO: save answers to txt
+        return Ok(response);
     }
+    
     [HttpGet("/questions")]
-    public IActionResult GetQuestion( GetQuestionRequest request)
+    public IActionResult GetQuestion()
     {
-        return Ok(request);
+        //TODO: get theme id
+        using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
+        
+        var question = context.Questions.OrderBy(q => EF.Functions.Random()).FirstOrDefault(); 
+        
+        //TODO: get answers from txt
+        
+        var response = new GetQuestionResponse(
+            question.Id,
+            question.ThemeId ?? -1,
+            question.TextOfQuestion,
+            "",
+            "",
+            ""
+        );
+        return Ok();
     }
+    
     [HttpPost("/questions")]
     public IActionResult PostQuestionAnswer( AnswerQuestionRequest request)
     {
+        using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
+        //TODO: grade answer
+        //TODO: student auth
+        var record = new Answer()
+        {
+            Id = Guid.NewGuid().GetHashCode(),
+            Mark = -1,
+            QuestionId = -1,
+            StudentId = -1,
+            AttemptId = -1
+        };
+        context.Answers.Add(record);
+        context.SaveChanges();
+        
+        var response = new AnswerQuestionResponse(record.QuestionId ?? -1 ,request.Answer);
+        
         return Ok(request);
     }
     
@@ -45,9 +99,14 @@ public class TestingSystemController:ControllerBase
         return Ok(request);
     }
     [HttpGet("/subjects")]
-    public IActionResult GetSubjects( GetSubjectsResponse request)
+    public IActionResult GetSubjects()
     {
-        return Ok(request);
+        using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
+        var subjects = context.Subjects.ToList();
+        var titles = subjects.Select(s => s.Title).ToList();
+        var ids = subjects.Select(s => s.Id ).ToList();
+        var response = new GetSubjectsResponse(titles,ids);
+        return Ok(response);
     }
     
     
@@ -57,9 +116,14 @@ public class TestingSystemController:ControllerBase
     {
         return Ok(request);
     }
-    [HttpGet("/themes")]
-    public IActionResult GetThemes( GetThemesRequest request)
+    [HttpGet("/themes/{id:int}")]
+    public IActionResult GetThemes(int id)
     {
-        return Ok(request);
+        using StudentTestingSystemDbContext context = new StudentTestingSystemDbContext();
+        var themes = context.Themes.Where(t => t.SubjectId == id).ToList();
+        var titles = themes.Select(t => t.Title).ToList();
+        var ids = themes.Select(t => t.Id ).ToList();
+        var response = new GetThemesResponse(titles,ids,id);
+        return Ok(response);
     }
 }
