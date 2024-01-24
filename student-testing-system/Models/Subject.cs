@@ -2,6 +2,11 @@ namespace student_testing_system.Models;
 
 public class Subject
 {
-    public Guid SubjectId { get;  }
+    public int SubjectId { get;  }
     public string SubjectName { get;  }
+    public Subject (string subjectName)
+    {
+        SubjectId = Guid.NewGuid().GetHashCode();
+        SubjectName = subjectName;
+    }
 }
