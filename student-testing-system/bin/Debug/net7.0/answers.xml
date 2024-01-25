@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<answers>
+  <question>
+    <id>333</id>
+    <answer1>a) They are always equal</answer1>
+    <answer2>b) The angle of incidence is greater</answer2>
+    <answer3>c) The angle of reflection is greater</answer3>
+  </question>
+  <question>
+    <id>444</id>
+    <answer1>a) The bending of light as it passes through different mediums</answer1>
+    <answer2>b) The reflection of light off a surface</answer2>
+    <answer3>c) The absorption of light by a material</answer3>
+  </question>
+  <question>
+    <id>555</id>
+    <answer1>a) It decreases</answer1>
+    <answer2>b) It increases</answer2>
+    <answer3>c) It remains constant</answer3>
+  </question>
+  <question>
+    <id>666</id>
+    <answer1>a) All incident light is reflected back into the original medium</answer1>
+    <answer2>b) Some incident light is absorbed by the medium</answer2>
+    <answer3>c) Refraction occurs in all cases</answer3>
+  </question>
+  <question>
+    <id>900</id>
+    <answer1>a) They are both negative</answer1>
+    <answer2>b) They are both positive</answer2>
+    <answer3>c) One is positive, and the other is negative</answer3>
+  </question>
+  <question>
+    <id>432</id>
+    <answer1>a) Energy cannot be created or destroyed, only transferred</answer1>
+    <answer2>b) Heat always flows from hot to cold</answer2>
+    <answer3>c) The total entropy of an isolated system always increases</answer3>
+  </question>
+  <question>
+    <id>220</id>
+    <answer1>a) The amount of heat required to raise the temperature of one unit mass by one degree Celsius</answer1>
+    <answer2>b) The total heat in a system</answer2>
+    <answer3>c) The temperature difference between two bodies</answer3>
+  </question>
+  <question>
+    <id>901</id>
+    <answer1>a) A process in which no heat is exchanged with the surroundings</answer1>
+    <answer2>b) A process involving constant temperature</answer2>
+    <answer3>c) A process with constant volume</answer3>
+  </question>
+  <question>
+    <id>928</id>
+    <answer1>a) A measure of the disorder or randomness of a system</answer1>
+    <answer2>b) The total energy of a system</answer2>
+    <answer3>c) The heat capacity of a substance</answer3>
+  </question>
+  <question>
+    <id>516</id>
+    <answer1>a) Increases (Correct)</answer1>
+    <answer2>b) Decreases</answer2>
+    <answer3>c) Remains constant</answer3>
+  </question>
+</answers>

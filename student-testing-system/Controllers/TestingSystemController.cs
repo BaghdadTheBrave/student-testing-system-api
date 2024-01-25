@@ -39,7 +39,7 @@ public TestingSystemController
             ThemeId = request.ThemeId,
             Id = Guid.NewGuid().GetHashCode()
         };
-        var subject = _questionService.AddQuestion(question);
+        var subject = _questionService.AddQuestion(question, new string[]{request.Answer1,request.Answer2,request.Answer3});
         
         var response = new PostQuestionResponse
             (
